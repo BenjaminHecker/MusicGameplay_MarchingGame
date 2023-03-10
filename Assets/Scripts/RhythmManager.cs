@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RhythmManager : MonoBehaviour
@@ -16,6 +14,9 @@ public class RhythmManager : MonoBehaviour
     private bool durationSet = false;
     private float beatDuration;
     private float barDuration;
+
+    public static float BeatDuration { get { return instance.beatDuration; } }
+    public static float BarDuration { get { return instance.barDuration; } }
 
     private void Awake()
     {

@@ -93,30 +93,10 @@
 							</Reference>
 							<Reference>
 								<Local>
-									<MusicCue Name="" ID="{4CAE024E-F395-4212-B91F-CF5DA5B9E43F}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="2"/>
-											<Property Name="TimeMs" Type="Real64" Value="4000"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
 									<MusicCue Name="" ID="{16D0F5E5-F260-4D9C-80D0-6214201CE3A1}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
 											<Property Name="TimeMs" Type="Real64" Value="5000"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
-									<MusicCue Name="" ID="{C6224A4D-FC1E-488B-A058-9F543F7726E5}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="2"/>
-											<Property Name="TimeMs" Type="Real64" Value="6000"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>
@@ -133,30 +113,10 @@
 							</Reference>
 							<Reference>
 								<Local>
-									<MusicCue Name="" ID="{7AA5D29F-C72A-4DFA-A6D8-4C1E62D844C2}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="2"/>
-											<Property Name="TimeMs" Type="Real64" Value="8000"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
 									<MusicCue Name="" ID="{D8D4D31F-0756-412E-BA26-C2826542BDE7}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
 											<Property Name="TimeMs" Type="Real64" Value="9000"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
-									<MusicCue Name="" ID="{CED23706-7A82-43D5-902F-CFB6078C8982}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="2"/>
-											<Property Name="TimeMs" Type="Real64" Value="10000"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ReactOnRhythm;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IOnBeat
 {
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 0.5f;
@@ -14,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        RhythmManager.onCue += OnCue;
         RhythmManager.onBeat += OnBeat;
     }
 
@@ -38,12 +38,7 @@ public class PlayerMovement : MonoBehaviour
         player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, 0.01f);
     }
 
-    private void OnCue(object sender, System.EventArgs e)
-    {
-        Debug.Log("Cue");
-    }
-
-    private void OnBeat(object sender, System.EventArgs e)
+    public void OnBeat(object sender, System.EventArgs e)
     {
         Step();
     }
@@ -52,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         currentPos = targetPos;
 
-        targetPos = currentPos += dir;
+        if (GridManager.InBounds(currentPos + dir))
+            targetPos = currentPos += dir;
     }
 }
