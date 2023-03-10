@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] AK.Wwise.Event musicEvent;
-    private uint playingID;
-
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 0.5f;
     [SerializeField] private float rotateSpeed = 10f;
-    [SerializeField] private float moveSpeed = 10f;
 
     private Vector2 dir;
     private Vector2 currentPos;
@@ -18,15 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        playingID = musicEvent.Post(
-            gameObject,
-            (uint) (
-                AkCallbackType.AK_MusicSyncAll
-                | AkCallbackType.AK_EnableGetMusicPlayPosition
-                | AkCallbackType.AK_MIDIEvent
-            ),
-            CallbackFunction
-        );
+        RhythmManager.onCue += OnCue;
+        RhythmManager.onBeat += OnBeat;
     }
 
     private void Update()
@@ -44,32 +33,25 @@ public class PlayerMovement : MonoBehaviour
             dir += (Vector2) player.right * 0.01f;
 
         player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
-        player.position = Vector3.Lerp(player.position, targetPos, moveSpeed * Time.deltaTime);
+        
+        Vector3 currentVelocity = Vector3.zero;
+        player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, 0.01f);
     }
 
-    private void CallbackFunction(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
+    private void OnCue(object sender, System.EventArgs e)
     {
-        AkMusicSyncCallbackInfo musicInfo;
+        Debug.Log("Cue");
+    }
 
-        if (in_info is AkMusicSyncCallbackInfo)
-        {
-            musicInfo = (AkMusicSyncCallbackInfo)in_info;
-            switch (in_type)
-            {
-                case AkCallbackType.AK_MusicSyncUserCue:
-                    break;
-                case AkCallbackType.AK_MusicSyncBeat:
-                    Step();
-                    break;
-                case AkCallbackType.AK_MusicSyncBar:
-                    break;
-            }
-        }
+    private void OnBeat(object sender, System.EventArgs e)
+    {
+        Step();
     }
 
     private void Step()
     {
         currentPos = targetPos;
+
         targetPos = currentPos += dir;
     }
 }
