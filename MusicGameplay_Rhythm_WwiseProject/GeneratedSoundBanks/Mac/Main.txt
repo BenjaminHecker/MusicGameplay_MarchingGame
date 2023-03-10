@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	942295769	MarchingSong			\Default Work Unit\MarchingSong	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	692323099	MarchingSong	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Mac\SFX\marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\MarchingSong		22127712
+

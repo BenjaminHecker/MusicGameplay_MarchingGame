@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E1743511-CFA6-4E97-9166-CC7C60A754FF}" SchemaVersion="110">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{E1743511-CFA6-4E97-9166-CC7C60A754FF}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{D5FBA221-B2F9-44D4-8A48-C036B6C8315E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="MarchingSong" ID="{5B3BA0CF-5D19-4345-B233-B21E81784E50}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

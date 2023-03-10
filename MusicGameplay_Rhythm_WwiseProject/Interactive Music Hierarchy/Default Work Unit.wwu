@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}" SchemaVersion="110">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="MarchingSong" ID="{CFED4F3B-C778-4953-B09D-7F349F90EEE5}" ShortID="979017204">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="163865.547408043"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{28412B7C-6C2C-4CE2-ABA3-A734DD90F813}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{229BF49B-5EF7-4ED1-BE89-2291C516D1CF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="MarchingSong" ID="{EBC781B4-E562-4443-99B2-658574E55455}" ShortID="447538229">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{229BF49B-5EF7-4ED1-BE89-2291C516D1CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="marching-music-on-the-tramp-by-john-philip-sousa-95350" ID="{E80D336B-9FBC-4734-8D06-EFF9D5D2D18F}">
+									<Language>SFX</Language>
+									<AudioFile>marching-music-on-the-tramp-by-john-philip-sousa-95350.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="692323099"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{C7BD0CC0-97B2-4DDF-9772-036EF99D76E4}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<Reference>
+										<Local>
+											<MusicTrackSequence Name="" ID="{FFF1A32C-CFF3-4B4A-B874-3E6B33D86CFD}">
+												<ObjectLists>
+													<ObjectList Name="Clips">
+														<Reference>
+															<Local>
+																<MusicClip Name="marching-music-on-the-tramp-by-john-philip-sousa-95350" ID="{8D4541AF-DF42-4E09-91D0-01C73C01B439}">
+																	<PropertyList>
+																		<Property Name="BeginTrimOffset" Type="Real64" Value="250"/>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="125440"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																		<Property Name="PlayAt" Type="Real64" Value="-250"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="marching-music-on-the-tramp-by-john-philip-sousa-95350" ID="{E80D336B-9FBC-4734-8D06-EFF9D5D2D18F}"/>
+																</MusicClip>
+															</Local>
+														</Reference>
+													</ObjectList>
+												</ObjectLists>
+											</MusicTrackSequence>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<Reference>
+								<Local>
+									<MusicCue Name="Entry Cue" ID="{48DD3B16-C4CD-4307-B663-E2290B5FFAEA}"/>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Exit Cue" ID="{FA795A90-6FFB-4B00-AD9B-C1D0FACED5F1}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="1"/>
+											<Property Name="TimeMs" Type="Real64" Value="125440"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
