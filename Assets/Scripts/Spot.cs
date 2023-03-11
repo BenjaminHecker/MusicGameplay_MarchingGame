@@ -9,13 +9,16 @@ public class Spot : MonoBehaviour, IOnBeat
     private SpriteRenderer sRender;
     private Color targetColor;
 
-    private int counter = 5;
+    [SerializeField] private int countdownMax;
+    private int counter;
 
     private void Awake()
     {
         sRender = GetComponent<SpriteRenderer>();
         targetColor = sRender.color;
         sRender.color = Color.clear;
+
+        counter = countdownMax;
     }
 
     private void Start()
@@ -38,7 +41,7 @@ public class Spot : MonoBehaviour, IOnBeat
         counter--;
 
         Color newColor = targetColor;
-        newColor.a = 1 - counter / 4f;
+        newColor.a = 1 - (float) counter / countdownMax;
         sRender.color = newColor;
 
         if (counter < 0)
