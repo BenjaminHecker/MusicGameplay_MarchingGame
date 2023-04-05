@@ -1,4 +1,4 @@
-public class ReactOnRhythm
+namespace ReactOnRhythm
 {
     public interface IOnCue
     {

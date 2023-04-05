@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static ReactOnRhythm;
+using ReactOnRhythm;
 
 public class PlayerMovement : MonoBehaviour, IOnBeat
 {
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 0.5f;
     [SerializeField] private float rotateSpeed = 10f;
+
+    private const float INPUT_THRESHOLD = 0.38f;
 
     private Vector2 dir;
     private Vector2 currentPos;
@@ -22,10 +24,19 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
     {
         dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (dir.x > 0) dir.x = 1;
-        if (dir.x < 0) dir.x = -1;
-        if (dir.y > 0) dir.y = 1;
-        if (dir.y < 0) dir.y = -1;
+        if (dir.x > INPUT_THRESHOLD)
+            dir.x = 1;
+        else if (dir.x < -INPUT_THRESHOLD)
+            dir.x = -1;
+        else
+            dir.x = 0;
+
+        if (dir.y > INPUT_THRESHOLD)
+            dir.y = 1;
+        else if (dir.y < -INPUT_THRESHOLD)
+            dir.y = -1;
+        else
+            dir.y = 0;
 
         dir *= stepSize;
 

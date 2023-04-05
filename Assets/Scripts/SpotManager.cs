@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static ReactOnRhythm;
+using ReactOnRhythm;
 
 public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
 {

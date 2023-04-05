@@ -7,6 +7,7 @@ public class RhythmManager : MonoBehaviour
 
     public static event EventHandler onCue;
     public static event EventHandler onBeat;
+    public static event EventHandler onBar;
 
     [SerializeField] AK.Wwise.Event musicEvent;
     private uint playingID;
@@ -58,6 +59,7 @@ public class RhythmManager : MonoBehaviour
                     OnBeat(args);
                     break;
                 case AkCallbackType.AK_MusicSyncBar:
+                    OnBar(args);
                     break;
             }
 
@@ -81,6 +83,11 @@ public class RhythmManager : MonoBehaviour
     private void OnBeat(RhythmEventArgs e)
     {
         onBeat?.Invoke(this, e);
+    }
+
+    private void OnBar(RhythmEventArgs e)
+    {
+        onBar?.Invoke(this, e);
     }
 }
 
