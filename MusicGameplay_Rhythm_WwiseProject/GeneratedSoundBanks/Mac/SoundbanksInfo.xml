@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F2C7966F-0A8D-4ADC-A34F-B033D35485C3}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{26DA8806-CBB8-DEE7-877B-F74AE2E8AB54}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -38,6 +38,10 @@
 					<ShortName>musical-march-4312.wav</ShortName>
 					<CachePath>SFX/musical-march-4312_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="598688921" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pepsi.wav</ShortName>
+					<CachePath>SFX/Pepsi_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="692323099" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>marching-music-on-the-tramp-by-john-philip-sousa-95350.wav</ShortName>
 					<CachePath>SFX/marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem</CachePath>
@@ -49,6 +53,10 @@
 				<File Id="742164214" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>[YT2mp3.info] - MEGALOVANIA (320kbps).wav</ShortName>
 					<CachePath>SFX/[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="855574524" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome180.wav</ShortName>
+					<CachePath>SFX/Metronome180_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="886094863" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metronome85.wav</ShortName>
@@ -78,6 +86,12 @@
 						<MediaRef Id="742164214"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="374244200" Name="Pepsi" DurationType="OneShot" DurationMin="32.666664" DurationMax="32.666664">
+					<MediaRefs>
+						<MediaRef Id="598688921"/>
+						<MediaRef Id="855574524"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2532903782" Name="Player1Hit" DurationType="OneShot" DurationMin="0.38165534" DurationMax="0.38165534">
 					<MediaRefs>
 						<MediaRef Id="699473598"/>
@@ -91,5 +105,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{636F7A26-B1F1-DF76-8740-8EA087CB513F}</FileHash>
+	<FileHash>{582BCD93-590C-5E93-F6EF-B7E9B2B299CB}</FileHash>
 </SoundBanksInfo>

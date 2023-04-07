@@ -58,6 +58,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Pepsi" ID="{F53AE536-D61D-4A80-9B9C-08F4EDFFD6F0}">
+					<ChildrenList>
+						<Action Name="" ID="{0A6D40B6-1FC2-409D-A54D-9930ACC75B83}" ShortID="1012954241">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pepsi" ID="{615586E2-FF69-40BA-9FC8-E31A87981106}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -1445,6 +1445,11 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 2ea98ae2565dc294d9e98141844fbca2, type: 2}
+  - BPM: 180
+    song:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f655af9ecc47d164884387d6bb6382ba, type: 2}
   - BPM: 240
     song:
       idInternal: 0
