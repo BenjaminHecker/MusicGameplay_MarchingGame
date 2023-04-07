@@ -1817,8 +1817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -296, y: 0}
-  m_SizeDelta: {x: 184.6587, y: 236.6532}
+  m_AnchoredPosition: {x: -296, y: -10}
+  m_SizeDelta: {x: 184.6587, y: 308.2462}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996620941
 MonoBehaviour:
@@ -1840,14 +1840,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move to the beat!
+  m_text: 'March to the beat!
 
 
     Every beat you''ll take one step in the direction
     you''re facing.
 
 
-    Keep up with the markers as they fall!'
+    TIP:
+
+    hold down a direction instead of tapping
+
+
+    Keep
+    up with the markers as they fall!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+            Application.Quit();
+    }
+
     public void SelectSong(int index)
     {
         GameManager.selectedSong = index;

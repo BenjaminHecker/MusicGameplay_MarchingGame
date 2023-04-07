@@ -37,12 +37,6 @@ public class GameManager : MonoBehaviour
         RhythmManager.StopSong(instance.songs[selectedSong].song);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape))
-            Application.Quit();
-    }
-
     public static void IncrementScore()
     {
         instance.score++;
