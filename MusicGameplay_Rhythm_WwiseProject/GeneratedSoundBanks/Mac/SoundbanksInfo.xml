@@ -22,10 +22,14 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A58FADD8-B8F5-B979-C1E1-EE1832094D12}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D57C06BC-BD4B-B338-25B4-9F070FB7E3FB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="345135581" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>musical-march-4312.wav</ShortName>
+					<CachePath>SFX/musical-march-4312_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="692323099" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>marching-music-on-the-tramp-by-john-philip-sousa-95350.wav</ShortName>
 					<CachePath>SFX/marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem</CachePath>
@@ -34,6 +38,10 @@
 					<ShortName>13750__hookhead__snare-2.wav</ShortName>
 					<CachePath>SFX/13750__hookhead__snare-2_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="742164214" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>[YT2mp3.info] - MEGALOVANIA (320kbps).wav</ShortName>
+					<CachePath>SFX/[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
 				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="125.19" DurationMax="125.19">
@@ -41,13 +49,23 @@
 						<MediaRef Id="692323099"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="156.24301" DurationMax="156.24301">
+					<MediaRefs>
+						<MediaRef Id="742164214"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2532903782" Name="Player1Hit" DurationType="OneShot" DurationMin="0.42168337" DurationMax="0.42168337">
 					<MediaRefs>
 						<MediaRef Id="699473598"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1525101168" Name="SimpleMarch" DurationType="OneShot" DurationMin="55.66523" DurationMax="55.66523">
+					<MediaRefs>
+						<MediaRef Id="345135581"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{497666B2-8617-E84F-455B-BFE1705FFB15}</FileHash>
+	<FileHash>{756BA195-CC9D-9FF5-FE66-F17F45FE75B1}</FileHash>
 </SoundBanksInfo>

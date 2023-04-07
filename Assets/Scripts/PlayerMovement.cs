@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 0.5f;
     [SerializeField] private float stepSmoothTime = 0.005f;
+    [SerializeField] private float rotateSpeed = 10f;
 
     [SerializeField] private float inputThreshold = 0.38f;
     [SerializeField] private float inputDeadzone = 0.2f;
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
     private void Update()
     {
         UpdateDir();
+
+        player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
 
         Vector3 currentVelocity = Vector3.zero;
         player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, stepSmoothTime);

@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 113574e1a6cf974e9166cc7c60a754ff
     GuidInternal: 
-    m_lastTime: -8585207590765838666
+    m_lastTime: -8585207519545063786
     List:
     - name: Main
       guid: 21a2fbd5f9b2d4448a48c036b6c8315e
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6ebfb6e5243ae449ba278f439df6fb42
     GuidInternal: 
-    m_lastTime: -8585207595960889892
+    m_lastTime: -8585207517770863560
     List:
     - name: MarchingSong
       guid: cfa03b5b195d4543b233b21e81784e50
@@ -113,6 +113,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: MEGALOVANIA
+      guid: 6d3c68326e9b994c9067d51faa0852e3
+      id: 1459549293
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: MEGALOVANIA
+        ObjectType: 3
+        guid: 6d3c68326e9b994c9067d51faa0852e3
+      Path: Events\Default Work Unit\MEGALOVANIA
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player1Hit
       guid: 8602480ad690c342ad407d7844e7f63e
       id: 2532903782
@@ -127,6 +144,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8602480ad690c342ad407d7844e7f63e
       Path: Events\Default Work Unit\Player1Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SimpleMarch
+      guid: 1ad0c2a57a9c274b827fe29262b96921
+      id: 1525101168
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: SimpleMarch
+        ObjectType: 3
+        guid: 1ad0c2a57a9c274b827fe29262b96921
+      Path: Events\Default Work Unit\SimpleMarch
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -187,7 +221,7 @@ MonoBehaviour:
     m_lastTime: -8585231856496361827
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000500000006000000070000000a0000000b0000000c000000
+  ExpandedWaapiItemIds: 010000000500000006000000070000000a0000000b0000000c0000003a0000003b0000000601000007010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

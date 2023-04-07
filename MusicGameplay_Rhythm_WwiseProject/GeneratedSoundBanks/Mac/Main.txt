@@ -1,8 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
 	942295769	MarchingSong			\Default Work Unit\MarchingSong	
+	1459549293	MEGALOVANIA			\Default Work Unit\MEGALOVANIA	
+	1525101168	SimpleMarch			\Default Work Unit\SimpleMarch	
 	2532903782	Player1Hit			\Default Work Unit\Player1Hit	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	345135581	musical-march-4312	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Mac\SFX\musical-march-4312_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\SimpleMarch\musical-march-4312		9598560
 	692323099	MarchingSong	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Mac\SFX\marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\MarchingSong		22127712
 	699473598	13750__hookhead__snare-2	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Mac\SFX\13750__hookhead__snare-2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Player1Hit\13750__hookhead__snare-2		33758
+	742164214	[YT2mp3_info] - MEGALOVANIA (320kbps)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Mac\SFX\[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MEGALOVANIA\[YT2mp3_info] - MEGALOVANIA (320kbps)		27528288
 

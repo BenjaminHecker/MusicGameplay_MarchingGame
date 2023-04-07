@@ -25,6 +25,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SimpleMarch" ID="{A5C2D01A-9C7A-4B27-827F-E29262B96921}">
+					<ChildrenList>
+						<Action Name="" ID="{EF503529-7ED0-46B5-BDBB-B03208F23F74}" ShortID="364528184">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SimpleMarch" ID="{D0648762-DB80-42E3-8D9C-B3989B9BBD5B}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MEGALOVANIA" ID="{32683C6D-9B6E-4C99-9067-D51FAA0852E3}">
+					<ChildrenList>
+						<Action Name="" ID="{79C6B8B4-97F9-49ED-8215-F67799437184}" ShortID="988507674">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MEGALOVANIA" ID="{10A90364-0499-462E-B3AB-928B6F651EFC}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
