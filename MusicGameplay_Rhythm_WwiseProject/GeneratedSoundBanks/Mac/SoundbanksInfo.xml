@@ -22,10 +22,18 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D57C06BC-BD4B-B338-25B4-9F070FB7E3FB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{513E7813-15C5-620C-A947-112498E8090F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="251213437" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome240.wav</ShortName>
+					<CachePath>SFX/Metronome240_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="287938353" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>hip-hop-just-in-my-style-141059.wav</ShortName>
+					<CachePath>SFX/hip-hop-just-in-my-style-141059_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="345135581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>musical-march-4312.wav</ShortName>
 					<CachePath>SFX/musical-march-4312_D79FB2B7.wem</CachePath>
@@ -42,19 +50,35 @@
 					<ShortName>[YT2mp3.info] - MEGALOVANIA (320kbps).wav</ShortName>
 					<CachePath>SFX/[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="886094863" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome85.wav</ShortName>
+					<CachePath>SFX/Metronome85_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="1059043398" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome120.wav</ShortName>
+					<CachePath>SFX/Metronome120_D79FB2B7.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="125.19" DurationMax="125.19">
+				<Event Id="2522127497" Name="HipHop" DurationType="OneShot" DurationMin="40.96941" DurationMax="40.96941">
 					<MediaRefs>
-						<MediaRef Id="692323099"/>
+						<MediaRef Id="287938353"/>
+						<MediaRef Id="886094863"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="156.24301" DurationMax="156.24301">
+				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="127.655556" DurationMax="127.655556">
 					<MediaRefs>
+						<MediaRef Id="692323099"/>
+						<MediaRef Id="1059043398"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="158.24301" DurationMax="158.24301">
+					<MediaRefs>
+						<MediaRef Id="251213437"/>
 						<MediaRef Id="742164214"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2532903782" Name="Player1Hit" DurationType="OneShot" DurationMin="0.42168337" DurationMax="0.42168337">
+				<Event Id="2532903782" Name="Player1Hit" DurationType="OneShot" DurationMin="0.38165534" DurationMax="0.38165534">
 					<MediaRefs>
 						<MediaRef Id="699473598"/>
 					</MediaRefs>
@@ -67,5 +91,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{756BA195-CC9D-9FF5-FE66-F17F45FE75B1}</FileHash>
+	<FileHash>{7AA8A202-8433-FF75-E8EA-AA04301D9E74}</FileHash>
 </SoundBanksInfo>

@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Player1Hit" ID="{0A480286-90D6-42C3-AD40-7D7844E7F63E}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MarchingSong" ID="{5B3BA0CF-5D19-4345-B233-B21E81784E50}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HipHop" ID="{9D9A9959-25EF-4531-8564-531436F421BC}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SimpleMarch" ID="{A5C2D01A-9C7A-4B27-827F-E29262B96921}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MEGALOVANIA" ID="{32683C6D-9B6E-4C99-9067-D51FAA0852E3}" WorkUnitID="{E5B6BF6E-3A24-49E4-BA27-8F439DF6FB42}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

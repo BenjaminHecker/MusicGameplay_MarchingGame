@@ -47,6 +47,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="HipHop" ID="{9D9A9959-25EF-4531-8564-531436F421BC}">
+					<ChildrenList>
+						<Action Name="" ID="{CA2B9DC1-219C-4C2F-AC15-6DDCDC28ED62}" ShortID="543272220">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HipHop" ID="{25E04C1E-2A38-4CB7-B800-D02BC29F7D38}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

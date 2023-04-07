@@ -2,11 +2,16 @@ Event	ID	Name			Wwise Object Path	Notes
 	942295769	MarchingSong			\Default Work Unit\MarchingSong	
 	1459549293	MEGALOVANIA			\Default Work Unit\MEGALOVANIA	
 	1525101168	SimpleMarch			\Default Work Unit\SimpleMarch	
+	2522127497	HipHop			\Default Work Unit\HipHop	
 	2532903782	Player1Hit			\Default Work Unit\Player1Hit	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	251213437	Metronome240	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome240_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MEGALOVANIA\Metronome240		352896
+	287938353	hip-hop-just-in-my-style-141059	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\hip-hop-just-in-my-style-141059_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\HipHop\hip-hop-just-in-my-style-141059		7188576
 	345135581	musical-march-4312	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\musical-march-4312_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\SimpleMarch\musical-march-4312		9598560
 	692323099	MarchingSong	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\MarchingSong		22127712
 	699473598	13750__hookhead__snare-2	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\13750__hookhead__snare-2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Player1Hit\13750__hookhead__snare-2		33758
 	742164214	[YT2mp3_info] - MEGALOVANIA (320kbps)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MEGALOVANIA\[YT2mp3_info] - MEGALOVANIA (320kbps)		27528288
+	886094863	Metronome85	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome85_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\HipHop\Metronome85		996236
+	1059043398	Metronome120	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome120_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\Metronome120		705696
 

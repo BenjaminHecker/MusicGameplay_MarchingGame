@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID HIPHOP = 2522127497U;
         static const AkUniqueID MARCHINGSONG = 942295769U;
         static const AkUniqueID MEGALOVANIA = 1459549293U;
         static const AkUniqueID PLAYER1HIT = 2532903782U;

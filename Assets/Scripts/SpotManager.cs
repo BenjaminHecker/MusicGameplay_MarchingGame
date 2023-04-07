@@ -17,6 +17,12 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
         RhythmManager.onBeat += OnBeat;
     }
 
+    private void OnDestroy()
+    {
+        RhythmManager.onCue -= OnCue;
+        RhythmManager.onBeat -= OnBeat;
+    }
+
     public void OnCue(object sender, System.EventArgs e)
     {
         SpawnSpot();

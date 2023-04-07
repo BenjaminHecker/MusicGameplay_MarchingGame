@@ -56,8 +56,11 @@ public class Spot : MonoBehaviour, IOnBeat
         counter--;
         timerTarget = timer + counter * RhythmManager.BeatDuration;
 
-        if (counter == 0 && (PlayerMovement.instance.targetPos - (Vector2) transform.position).magnitude < 0.1f)
+        if (counter == 0 && (PlayerMovement.instance.targetPos - (Vector2)transform.position).magnitude < 0.1f)
+        {
             hitSound.Post(gameObject);
+            GameManager.IncrementScore();
+        }
     }
 
     private void Update()

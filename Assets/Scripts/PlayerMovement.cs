@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
         RhythmManager.onBeat += OnBeat;
     }
 
+    private void OnDestroy()
+    {
+        RhythmManager.onBeat -= OnBeat;
+    }
+
     private void Update()
     {
         UpdateDir();
