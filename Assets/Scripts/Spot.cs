@@ -10,29 +10,35 @@ public class Spot : MonoBehaviour, IOnBeat
     [SerializeField] private SpriteRenderer innerOutline;
     [SerializeField] private SpriteRenderer outerCircle;
 
+    [SerializeField] private AnimationCurve animCurve;
+    [SerializeField] private Color startColor;
     [SerializeField] private Color targetColor;
 
-    [SerializeField] private float smoothTime = 0.02f;
+    [SerializeField] private float outerStartScale = 3f;
 
     [SerializeField] private int countdownMax;
     private int counter;
 
-    private Vector3 innerTargetScale;
-    private Vector3 outerTargetScale;
+    private float timerTarget;
+    private float timer = 0f;
+
+    private bool active = true;
+
+    [Space]
+    [SerializeField] private AK.Wwise.Event hitSound;
 
     private void Awake()
     {
-        innerCircle.color = Color.clear;
-        innerOutline.color = Color.clear;
-        outerCircle.color = Color.clear;
+        innerCircle.color = startColor;
+        innerOutline.color = startColor;
+        outerCircle.color = startColor;
+
+        innerCircle.transform.localScale = Vector3.zero;
+        outerCircle.transform.localScale = Vector3.one * outerStartScale;
 
         counter = countdownMax;
 
-        innerTargetScale = Vector3.zero;
-        innerCircle.transform.localScale = innerTargetScale;
-
-        outerTargetScale = Vector3.one * (countdownMax * 2 - 1);
-        outerCircle.transform.localScale = outerTargetScale;
+        timerTarget = countdownMax * RhythmManager.BeatDuration;
     }
 
     private void Start()
@@ -45,45 +51,72 @@ public class Spot : MonoBehaviour, IOnBeat
         RhythmManager.onBeat -= OnBeat;
     }
 
-    private void Update()
-    {
-        Vector3 vel = Vector3.zero;
-        innerCircle.transform.localScale = Vector3.SmoothDamp(innerCircle.transform.localScale, innerTargetScale, ref vel, smoothTime);
-        outerCircle.transform.localScale = Vector3.SmoothDamp(outerCircle.transform.localScale, outerTargetScale, ref vel, smoothTime);
-    }
-
     public void OnBeat(object sender, EventArgs e)
     {
-        Countdown();
-    }
-
-    private void Countdown()
-    {
         counter--;
+        timerTarget = timer + counter * RhythmManager.BeatDuration;
 
-        UpdateSpot();
+        if (counter == 0 && (PlayerMovement.instance.targetPos - (Vector2) transform.position).magnitude < 0.1f)
+            hitSound.Post(gameObject);
     }
 
-    private void UpdateSpot()
+    private void Update()
     {
-        float ratio = 1 - (float)counter / countdownMax;
+        if (!active) return;
 
-        Color innerCircleColor = targetColor;
-        innerCircleColor.a = ratio;
-        innerCircle.color = innerCircleColor;
+        float ratio = animCurve.Evaluate(Mathf.Min(1, timer / timerTarget));
 
-        Color innerOutlineColor = Color.white;
-        innerOutlineColor.a = ratio;
-        innerOutline.color = innerOutlineColor;
+        Color outlineColor = Color.white;
+        outlineColor.a = ratio;
+        innerOutline.color = outlineColor;
 
-        Color outerCircleColor = targetColor;
-        outerCircleColor.a = Mathf.Lerp(0, targetColor.a, ratio);
-        outerCircle.color = outerCircleColor;
+        Color circleColor = targetColor;
+        circleColor.a = Mathf.Lerp(startColor.a, targetColor.a, ratio);
+        innerCircle.color = circleColor;
+        outerCircle.color = circleColor;
 
-        innerTargetScale = Vector3.one * ratio;
-        outerTargetScale = Vector3.one * Mathf.Lerp(countdownMax * 2 - 1, 1, ratio);
+        innerCircle.transform.localScale = Vector3.one * ratio;
+        outerCircle.transform.localScale = Vector3.one * Mathf.Lerp(outerStartScale, 1, ratio);
 
-        if (counter < 0)
-            Destroy(gameObject);
+        timer += Time.deltaTime;
+
+        if (timer > timerTarget)
+        {
+            StartCoroutine(Disappear());
+            active = false;
+        }
+    }
+
+    private IEnumerator Disappear()
+    {
+        float disappearTimer = 0f;
+        float disappearTimerTarget = RhythmManager.BeatDuration * 0.5f;
+
+        float ratio;
+
+        do
+        {
+            ratio = 1 - animCurve.Evaluate(1 - Mathf.Min(1, disappearTimer / disappearTimerTarget));
+
+            Color outlineColor = Color.white;
+            outlineColor.a = 1 - ratio;
+            innerOutline.color = outlineColor;
+
+            Color innerCircleColor = targetColor;
+            innerCircleColor.a = Mathf.Lerp(targetColor.a, 0, ratio);
+            innerCircle.color = innerCircleColor;
+
+            Color outerCircleColor = Color.Lerp(targetColor, Color.white, ratio);
+            outerCircleColor.a = 1 - ratio;
+            outerCircle.color = outerCircleColor;
+
+            innerCircle.transform.localScale = Vector3.one * (1 - ratio);
+            outerCircle.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.5f, ratio);
+
+            disappearTimer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        } while (ratio < 1);
+
+        Destroy(gameObject);
     }
 }

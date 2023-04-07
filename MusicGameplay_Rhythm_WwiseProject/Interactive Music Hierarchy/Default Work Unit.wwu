@@ -86,7 +86,7 @@
 									<MusicCue Name="Exit Cue" ID="{FA795A90-6FFB-4B00-AD9B-C1D0FACED5F1}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="1"/>
-											<Property Name="TimeMs" Type="Real64" Value="125440"/>
+											<Property Name="TimeMs" Type="Real64" Value="68000"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>
@@ -337,6 +337,95 @@
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
 											<Property Name="TimeMs" Type="Real64" Value="17000"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</MusicSegment>
+				<MusicSegment Name="Player1Hit" ID="{A4DE1BA3-1BF1-4C9F-A68D-DD2EC675E8B6}" ShortID="257527124">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{28412B7C-6C2C-4CE2-ABA3-A734DD90F813}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{229BF49B-5EF7-4ED1-BE89-2291C516D1CF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="13750__hookhead__snare-2" ID="{7F6E2BB3-43D4-4929-95B7-8C00E1222734}" ShortID="825942231">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{229BF49B-5EF7-4ED1-BE89-2291C516D1CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="13750__hookhead__snare-2" ID="{4260B2E1-070A-4BB6-965C-F6486F6BE1FE}">
+									<Language>SFX</Language>
+									<AudioFile>13750__hookhead__snare-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="699473598"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{DCCB947C-50BE-407A-B360-7AC9E542F630}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists>
+								<ObjectList Name="Sequences">
+									<Reference>
+										<Local>
+											<MusicTrackSequence Name="" ID="{38F26AE5-C666-4D80-9064-1E9AFF840C68}">
+												<ObjectLists>
+													<ObjectList Name="Clips">
+														<Reference>
+															<Local>
+																<MusicClip Name="13750__hookhead__snare-2" ID="{1CE322DF-FF8B-484F-BF1D-DA525FF2B6D1}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="381.655328798186"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																		<Property Name="PlayAt" Type="Real64" Value="40.0280621382965"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="13750__hookhead__snare-2" ID="{4260B2E1-070A-4BB6-965C-F6486F6BE1FE}"/>
+																</MusicClip>
+															</Local>
+														</Reference>
+													</ObjectList>
+												</ObjectLists>
+											</MusicTrackSequence>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicTrack>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Cues">
+							<Reference>
+								<Local>
+									<MusicCue Name="Entry Cue" ID="{A99EB289-39AD-4790-B464-C1154934DF02}"/>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Exit Cue" ID="{DA7EB17F-8337-4BBD-8F51-9D4ECB17B0C0}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="1"/>
+											<Property Name="TimeMs" Type="Real64" Value="250"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>

@@ -302,6 +302,35 @@ MonoBehaviour:
   innerCircle: {fileID: 3084896015247212049}
   innerOutline: {fileID: 7188582949588514813}
   outerCircle: {fileID: 2977021040753710213}
-  targetColor: {r: 1, g: 0.80784315, b: 0, a: 0.39215687}
-  smoothTime: 0.01
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startColor: {r: 1, g: 0.80784315, b: 0, a: 0}
+  targetColor: {r: 1, g: 0.80784315, b: 0, a: 0.78431374}
+  outerStartScale: 3
   countdownMax: 4
+  hitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: feefeb7cce3f8524ebc986c7076ce51e, type: 2}

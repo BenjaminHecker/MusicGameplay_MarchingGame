@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 113574e1a6cf974e9166cc7c60a754ff
     GuidInternal: 
-    m_lastTime: -8585231835200114844
+    m_lastTime: -8585207590765838666
     List:
     - name: Main
       guid: 21a2fbd5f9b2d4448a48c036b6c8315e
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6ebfb6e5243ae449ba278f439df6fb42
     GuidInternal: 
-    m_lastTime: -8585231841518657409
+    m_lastTime: -8585207595960889892
     List:
     - name: MarchingSong
       guid: cfa03b5b195d4543b233b21e81784e50
@@ -110,6 +110,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: cfa03b5b195d4543b233b21e81784e50
       Path: Events\Default Work Unit\MarchingSong
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player1Hit
+      guid: 8602480ad690c342ad407d7844e7f63e
+      id: 2532903782
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: Player1Hit
+        ObjectType: 3
+        guid: 8602480ad690c342ad407d7844e7f63e
+      Path: Events\Default Work Unit\Player1Hit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

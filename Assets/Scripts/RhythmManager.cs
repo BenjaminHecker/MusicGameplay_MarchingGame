@@ -9,7 +9,7 @@ public class RhythmManager : MonoBehaviour
     public static event EventHandler onBeat;
     public static event EventHandler onBar;
 
-    [SerializeField] AK.Wwise.Event musicEvent;
+    //[SerializeField] AK.Wwise.Event musicEvent;
     private uint playingID;
 
     private bool durationSet = false;
@@ -27,17 +27,22 @@ public class RhythmManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start()
+    public static void PlaySong(AK.Wwise.Event musicEvent)
     {
-        playingID = musicEvent.Post(
-            gameObject,
+        instance.playingID = musicEvent.Post(
+            instance.gameObject,
             (uint)(
                 AkCallbackType.AK_MusicSyncAll
                 | AkCallbackType.AK_EnableGetMusicPlayPosition
                 | AkCallbackType.AK_MIDIEvent
             ),
-            CallbackFunction
+            instance.CallbackFunction
         );
+    }
+
+    public static void StopSong(AK.Wwise.Event musicEvent)
+    {
+        musicEvent.Stop(instance.gameObject);
     }
 
     private void CallbackFunction(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
