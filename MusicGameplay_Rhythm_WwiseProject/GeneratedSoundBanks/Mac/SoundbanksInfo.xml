@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{26DA8806-CBB8-DEE7-877B-F74AE2E8AB54}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{652E5E02-60F5-1E9F-EC69-2E377AA06209}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -74,7 +74,7 @@
 						<MediaRef Id="886094863"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="127.655556" DurationMax="127.655556">
+				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="22.5" DurationMax="22.5">
 					<MediaRefs>
 						<MediaRef Id="692323099"/>
 						<MediaRef Id="1059043398"/>
@@ -86,7 +86,7 @@
 						<MediaRef Id="742164214"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="374244200" Name="Pepsi" DurationType="OneShot" DurationMin="32.666664" DurationMax="32.666664">
+				<Event Id="374244200" Name="Pepsi" DurationType="OneShot" DurationMin="34" DurationMax="34">
 					<MediaRefs>
 						<MediaRef Id="598688921"/>
 						<MediaRef Id="855574524"/>
@@ -105,5 +105,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{582BCD93-590C-5E93-F6EF-B7E9B2B299CB}</FileHash>
+	<FileHash>{3B37A439-E754-EEFB-8676-99BE33158460}</FileHash>
 </SoundBanksInfo>
