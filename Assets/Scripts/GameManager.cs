@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
 
         RhythmManager.PlaySong(songs[selectedSong].song);
         playerAnim.speed = songs[selectedSong].BPM / 60f;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            StopSong();
+            SceneManager.LoadScene(1);
+        }
     }
 
     public static void StopSong()
