@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
     public static PlayerMovement instance;
     
     [SerializeField] private Transform player;
-    [SerializeField] private float stepSize = 0.5f;
+    [SerializeField] private float stepSize = 1f;
     [SerializeField] private float stepSmoothTime = 0.005f;
     [SerializeField] private float rotateSpeed = 10f;
 

@@ -6,14 +6,21 @@ public class GridManager : MonoBehaviour
 {
     public static GridManager instance;
 
+    [SerializeField] private GridDot dotPrefab;
+
     public float minX, maxX, minY, maxY;
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        instance = this;
+
+        for (int x = Mathf.CeilToInt(minX); x <= maxX; x++)
+        {
+            for (int y = Mathf.CeilToInt(minY); y <= maxY; y++)
+            {
+                Instantiate(dotPrefab, new Vector3(x, y), Quaternion.identity, transform);
+            }
+        }
     }
 
     public static bool InBounds(Vector2 pos)

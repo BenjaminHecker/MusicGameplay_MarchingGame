@@ -12,7 +12,7 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
     private int dist = 2;
 
     public enum Difficulty { Easy, Medium, Hard }
-    private Difficulty difficulty = Difficulty.Hard;
+    private Difficulty difficulty = Difficulty.Easy;
 
     private void Start()
     {

@@ -16,8 +16,19 @@ public class RhythmManager : MonoBehaviour
     private float beatDuration;
     private float barDuration;
 
+    public static float BPM { get { return 60f / instance.beatDuration; } }
     public static float BeatDuration { get { return instance.beatDuration; } }
     public static float BarDuration { get { return instance.barDuration; } }
+    public static float CurrentPositionMS
+    {
+        get
+        {
+            AkSegmentInfo out_info = new AkSegmentInfo();
+            AkSoundEngine.GetPlayingSegmentInfo(instance.playingID, out_info);
+            return out_info.iCurrentPosition;
+        }
+    }
+    public static float CurrentPositionSec { get { return CurrentPositionMS / 1000f; } }
 
     private void Awake()
     {
