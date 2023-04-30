@@ -327,9 +327,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   startColor: {r: 1, g: 0.80784315, b: 0, a: 0}
-  targetColor: {r: 1, g: 0.80784315, b: 0, a: 0.78431374}
+  targetColor: {r: 1, g: 0.80784315, b: 0, a: 1}
   outerStartScale: 3
   countdownMax: 4
+  successPoints: 100
   hitSound:
     idInternal: 0
     valueGuidInternal: 

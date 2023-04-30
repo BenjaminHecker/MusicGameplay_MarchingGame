@@ -47,14 +47,11 @@ public class GameManager : MonoBehaviour
         RhythmManager.StopSong(instance.songs[selectedSong].song);
     }
 
-    public static void IncrementScore()
+    public static void IncrementScore(int value)
     {
-        instance.score++;
+        instance.score += value;
 
-        string scoreText = instance.score.ToString();
-        if (instance.score < 10)
-            scoreText = "0" + scoreText;
-
+        string scoreText = instance.score.ToString("00000");
         instance.txt_Score.text = scoreText;
     }
 }

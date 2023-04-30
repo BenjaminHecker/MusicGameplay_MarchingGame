@@ -8,9 +8,9 @@ public class PlayerMovement2 : MonoBehaviour
 
     public enum TimingWindow
     {
-        Perfect = 50,
-        Great = 20,
-        Good = 10,
+        Perfect = 20,
+        Great = 10,
+        Good = 5,
         Miss = 0
     }
 
@@ -21,14 +21,19 @@ public class PlayerMovement2 : MonoBehaviour
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private float inputDeadzone = 0.2f;
 
+    [Tooltip("threshold angle for diagonal inputs (in degrees)")]
+    [SerializeField] [Range(0f, 45f)] private float diagonalAngleThreshold = 15;
+
+    private float DiagonalValueThreshold { get { return Mathf.Sin(Mathf.Deg2Rad * diagonalAngleThreshold); } }
+
     [Header("Timing Window")]
+    [SerializeField] private TimingIndicator indicatorPrefab;
     [SerializeField] private float perfectWindow = 0.050f;
     [SerializeField] private float greatWindow = 0.075f;
     [SerializeField] private float goodWindow = 0.100f;
 
-    private const float INPUT_ANGLE_THRESHOLD = 0.38f;
-
     private Vector2 dir;
+    private Vector2 prevDir;
     private Vector2 currentPos;
     [HideInInspector] public Vector2 targetPos;
 
@@ -47,15 +52,6 @@ public class PlayerMovement2 : MonoBehaviour
         if (timing == TimingWindow.Miss)
             canMove = true;
 
-        //if (Input.GetKeyDown(KeyCode.W)) dir = Vector2.up;
-        //else if (Input.GetKeyDown(KeyCode.S)) dir = Vector2.down;
-        //else if (Input.GetKeyDown(KeyCode.A)) dir = Vector2.left;
-        //else if (Input.GetKeyDown(KeyCode.D)) dir = Vector2.right;
-        //else dir = Vector2.zero;
-
-        //if (dir != Vector2.zero)
-        //    Step(timing);
-
         UpdateDir();
 
         if (dir == Vector2.zero)
@@ -65,11 +61,12 @@ public class PlayerMovement2 : MonoBehaviour
             if (!directionHeld)
             {
                 directionHeld = true;
+                prevDir = dir;
                 Step(timing);
             }
         }
 
-        player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
+        player.up = Vector3.Lerp(player.up, prevDir, rotateSpeed * Time.deltaTime);
 
         Vector3 currentVelocity = Vector3.zero;
         player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, stepSmoothTime);
@@ -85,7 +82,8 @@ public class PlayerMovement2 : MonoBehaviour
         // player can make inputs as many times as they want during a Miss window,
         // but during a non-Miss window, they can only make one input
 
-        Debug.Log(timing);
+        TimingIndicator indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
+        indicator.Init(timing, -dir);
 
         if (timing != TimingWindow.Miss)
         {
@@ -93,6 +91,8 @@ public class PlayerMovement2 : MonoBehaviour
 
             if (GridManager.InBounds(currentPos + dir))
                 targetPos = currentPos += dir;
+
+            GameManager.IncrementScore((int)timing);
         }
     }
 
@@ -108,16 +108,16 @@ public class PlayerMovement2 : MonoBehaviour
 
         dir = temp.normalized;
 
-        if (dir.x > INPUT_ANGLE_THRESHOLD)
+        if (dir.x > DiagonalValueThreshold)
             dir.x = 1;
-        else if (dir.x < -INPUT_ANGLE_THRESHOLD)
+        else if (dir.x < -DiagonalValueThreshold)
             dir.x = -1;
         else
             dir.x = 0;
 
-        if (dir.y > INPUT_ANGLE_THRESHOLD)
+        if (dir.y > DiagonalValueThreshold)
             dir.y = 1;
-        else if (dir.y < -INPUT_ANGLE_THRESHOLD)
+        else if (dir.y < -DiagonalValueThreshold)
             dir.y = -1;
         else
             dir.y = 0;

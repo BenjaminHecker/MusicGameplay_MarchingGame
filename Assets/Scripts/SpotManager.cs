@@ -11,8 +11,8 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
     private bool firstSpot = true;
     private int dist = 2;
 
-    public enum Difficulty { Easy, Medium, Hard }
-    private Difficulty difficulty = Difficulty.Easy;
+    public enum Difficulty { FourDirectional, EightDirectional, AwkwardDiagonals }
+    [SerializeField] private Difficulty difficulty;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
     {
         List<Vector2> outline = new List<Vector2>();
 
-        if (difficulty == Difficulty.Hard)
+        if (difficulty == Difficulty.AwkwardDiagonals)
         {
             for (int x = -dist; x <= dist; x++)
             {
@@ -84,7 +84,7 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
             if (GridManager.InBounds(prevPos + leftOffset)) outline.Add(leftOffset);
             if (GridManager.InBounds(prevPos + rightOffset)) outline.Add(rightOffset);
 
-            if (difficulty == Difficulty.Medium)
+            if (difficulty == Difficulty.EightDirectional)
             {
                 Vector2 topRightOffset = new Vector2(dist, dist);
                 Vector2 topLeftOffset = new Vector2(-dist, dist);

@@ -25,6 +25,7 @@ public class Spot : MonoBehaviour, IOnBeat
     private bool active = true;
 
     [Space]
+    [SerializeField] private int successPoints = 100;
     [SerializeField] private AK.Wwise.Event hitSound;
 
     private void Awake()
@@ -56,10 +57,10 @@ public class Spot : MonoBehaviour, IOnBeat
         counter--;
         timerTarget = timer + counter * RhythmManager.BeatDuration;
 
-        if (counter == 0 && (PlayerMovement.instance.targetPos - (Vector2)transform.position).magnitude < 0.1f)
+        if (counter == 0 && (PlayerMovement2.instance.targetPos - (Vector2)transform.position).magnitude < 0.1f)
         {
             hitSound.Post(gameObject);
-            GameManager.IncrementScore();
+            GameManager.IncrementScore(successPoints);
         }
     }
 
