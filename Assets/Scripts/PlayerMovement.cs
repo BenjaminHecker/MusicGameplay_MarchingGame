@@ -1,19 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ReactOnRhythm;
+using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour, IOnBeat
+public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
-    
+
+    public enum TimingWindow
+    {
+        Perfect = 20,
+        Great = 10,
+        Good = 5,
+        Miss = -10
+    }
+
+    [Header("Movement")]
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 1f;
     [SerializeField] private float stepSmoothTime = 0.005f;
     [SerializeField] private float rotateSpeed = 10f;
-
-    [SerializeField] private float inputThreshold = 0.38f;
     [SerializeField] private float inputDeadzone = 0.2f;
+
+    [Tooltip("threshold angle for diagonal inputs (in degrees)")]
+    [SerializeField] [Range(0f, 45f)] private float diagonalAngleThreshold = 15;
+
+    private float DiagonalValueThreshold { get { return Mathf.Sin(Mathf.Deg2Rad * diagonalAngleThreshold); } }
+
+    [Header("Timing Window")]
+    [SerializeField] [Range(0f, 1f)] private float stepCooldownFactor = 0.5f;
+    [SerializeField] private TimingIndicator indicatorPrefab;
+    [SerializeField] private float perfectWindow = 0.050f;
+    [SerializeField] private float greatWindow = 0.075f;
+    [SerializeField] private float goodWindow = 0.100f;
+
+    private float lastStepTime = 0f;
 
     private Vector2 dir;
     private Vector2 currentPos;
@@ -24,65 +45,85 @@ public class PlayerMovement : MonoBehaviour, IOnBeat
         instance = this;
     }
 
-    private void Start()
+    public void Move(InputAction.CallbackContext context)
     {
-        RhythmManager.onBeat += OnBeat;
-    }
+        if (!context.started) return;
 
-    private void OnDestroy()
-    {
-        RhythmManager.onBeat -= OnBeat;
+        dir = SnapDir(context.ReadValue<Vector2>());
+
+        if (RhythmManager.IsPlaying)
+            Step();
     }
 
     private void Update()
     {
-        UpdateDir();
-
         player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
 
         Vector3 currentVelocity = Vector3.zero;
         player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, stepSmoothTime);
     }
 
-    public void OnBeat(object sender, System.EventArgs e)
+    private void Step()
     {
-        Step();
-    }
+        TimingWindow timing = GetTimingWindow();
 
-    private void UpdateDir()
-    {
-        Vector2 temp = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (temp.magnitude <= inputDeadzone)
+        if (Time.time - lastStepTime >= stepCooldownFactor * RhythmManager.BeatDuration)
         {
-            dir = Vector2.zero;
-            return;
+            lastStepTime = Time.time;
+
+            currentPos = targetPos;
+
+            if (GridManager.InBounds(currentPos + dir))
+                targetPos = currentPos += dir;
+        }
+        else
+        {
+            timing = TimingWindow.Miss;
         }
 
-        dir = temp.normalized;
+        TimingIndicator indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
+        indicator.Init(timing, -dir);
 
-        if (dir.x > inputThreshold)
+        GameManager.IncrementScore((int)timing);
+    }
+
+    private Vector2 SnapDir(Vector2 dir)
+    {
+        if (dir.magnitude <= inputDeadzone)
+        {
+            dir = Vector2.zero;
+            return dir;
+        }
+
+        dir.Normalize();
+
+        if (dir.x > DiagonalValueThreshold)
             dir.x = 1;
-        else if (dir.x < -inputThreshold)
+        else if (dir.x < -DiagonalValueThreshold)
             dir.x = -1;
         else
             dir.x = 0;
 
-        if (dir.y > inputThreshold)
+        if (dir.y > DiagonalValueThreshold)
             dir.y = 1;
-        else if (dir.y < -inputThreshold)
+        else if (dir.y < -DiagonalValueThreshold)
             dir.y = -1;
         else
             dir.y = 0;
 
         dir *= stepSize;
+
+        return dir;
     }
 
-    private void Step()
+    private TimingWindow GetTimingWindow()
     {
-        currentPos = targetPos;
+        float nearestBeat = Mathf.Round(RhythmManager.CurrentPositionSec / RhythmManager.BeatDuration) * RhythmManager.BeatDuration;
+        float beatOffset = Mathf.Abs(RhythmManager.CurrentPositionSec - nearestBeat);
 
-        if (GridManager.InBounds(currentPos + dir))
-            targetPos = currentPos += dir;
+        if (beatOffset <= perfectWindow / 2f) return TimingWindow.Perfect;
+        if (beatOffset <= greatWindow / 2f) return TimingWindow.Great;
+        if (beatOffset <= goodWindow / 2f) return TimingWindow.Good;
+        return TimingWindow.Miss;
     }
 }

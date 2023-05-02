@@ -13,9 +13,11 @@ public class RhythmManager : MonoBehaviour
     private uint playingID;
 
     private bool durationSet = false;
+    private bool isPlaying = false;
     private float beatDuration;
     private float barDuration;
 
+    public static bool IsPlaying { get { return instance.isPlaying; } }
     public static float BPM { get { return 60f / instance.beatDuration; } }
     public static float BeatDuration { get { return instance.beatDuration; } }
     public static float BarDuration { get { return instance.barDuration; } }
@@ -46,9 +48,12 @@ public class RhythmManager : MonoBehaviour
                 AkCallbackType.AK_MusicSyncAll
                 | AkCallbackType.AK_EnableGetMusicPlayPosition
                 | AkCallbackType.AK_MIDIEvent
+                | AkCallbackType.AK_EndOfEvent
             ),
             instance.CallbackFunction
         );
+
+        instance.isPlaying = true;
     }
 
     public static void StopSong(AK.Wwise.Event musicEvent)
@@ -58,13 +63,16 @@ public class RhythmManager : MonoBehaviour
 
     private void CallbackFunction(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
     {
+        if (in_type == AkCallbackType.AK_EndOfEvent)
+            isPlaying = false;
+
         AkMusicSyncCallbackInfo musicInfo;
 
         if (in_info is AkMusicSyncCallbackInfo)
         {
             musicInfo = (AkMusicSyncCallbackInfo)in_info;
-            RhythmEventArgs args = new RhythmEventArgs();
-            args.musicInfo = musicInfo;
+            RhythmEventArgs args = new RhythmEventArgs(musicInfo);
+            //args.musicInfo = musicInfo;
 
             switch (in_type)
             {
@@ -109,5 +117,10 @@ public class RhythmManager : MonoBehaviour
 
 public class RhythmEventArgs : EventArgs
 {
+    public RhythmEventArgs(AkMusicSyncCallbackInfo info)
+    {
+        musicInfo = info;
+    }
+
     public AkMusicSyncCallbackInfo musicInfo { get; set; }
 }

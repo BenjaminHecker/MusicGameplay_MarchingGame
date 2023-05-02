@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static PlayerMovement2;
+using static PlayerMovement;
 
 public class TimingIndicator : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textbox;
     [SerializeField] private AnimationCurve colorCurve;
     [SerializeField] private AnimationCurve scaleCurve;
-    [SerializeField] private AnimationCurve movementCurve;
-    [SerializeField] private float movementSpeed = 1f;
+    [SerializeField] private AnimationCurve moveCurve;
+    [SerializeField] private float moveDistance = 1f;
     [SerializeField] private float duration = 1f;
 
     [System.Serializable]
@@ -62,14 +62,14 @@ public class TimingIndicator : MonoBehaviour
             float ratio = timer / duration;
             float colorRatio = colorCurve.Evaluate(ratio);
             float scaleRatio = scaleCurve.Evaluate(ratio);
-            float moveRatio = movementCurve.Evaluate(ratio);
+            float moveRatio = moveCurve.Evaluate(ratio);
 
             Color newColor = textbox.color;
             newColor.a = 1 - colorRatio;
             textbox.color = newColor;
 
             textbox.transform.localScale = Vector3.one * scaleRatio;
-            textbox.transform.position = transform.position + dir.normalized * moveRatio;
+            textbox.transform.position = transform.position + dir.normalized * moveDistance * moveRatio;
         }
 
         timer += Time.deltaTime;
