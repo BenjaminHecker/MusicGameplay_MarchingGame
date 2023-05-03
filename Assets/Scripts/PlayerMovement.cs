@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float stepSize = 1f;
     [SerializeField] private float stepSmoothTime = 0.005f;
     [SerializeField] private float rotateSpeed = 10f;
-    [SerializeField] private float inputDeadzone = 0.2f;
+    //[SerializeField] private float inputDeadzone = 0.2f;
 
     [Tooltip("threshold angle for diagonal inputs (in degrees)")]
     [SerializeField] [Range(0f, 45f)] private float diagonalAngleThreshold = 15;
@@ -47,12 +47,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (!context.started) return;
+        if (context.started)
+        {
+            dir = SnapDir(context.ReadValue<Vector2>());
 
-        dir = SnapDir(context.ReadValue<Vector2>());
-
-        if (RhythmManager.IsPlaying)
-            Step();
+            if (RhythmManager.IsPlaying)
+                Step();
+        }
     }
 
     private void Update()
@@ -89,11 +90,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 SnapDir(Vector2 dir)
     {
-        if (dir.magnitude <= inputDeadzone)
-        {
-            dir = Vector2.zero;
-            return dir;
-        }
+        //if (dir.magnitude <= inputDeadzone)
+        //{
+        //    dir = Vector2.zero;
+        //    return dir;
+        //}
 
         dir.Normalize();
 
