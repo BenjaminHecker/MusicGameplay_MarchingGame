@@ -14,4 +14,9 @@ namespace ReactOnRhythm
     {
         void OnBar(object sender, System.EventArgs e);
     }
+
+    public interface IOnMIDI
+    {
+        void OnMIDI(object sender, System.EventArgs e);
+    }
 }

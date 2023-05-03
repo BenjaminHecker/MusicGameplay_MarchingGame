@@ -8,6 +8,7 @@ public class RhythmManager : MonoBehaviour
     public static event EventHandler onCue;
     public static event EventHandler onBeat;
     public static event EventHandler onBar;
+    public static event EventHandler onMIDI;
 
     //[SerializeField] AK.Wwise.Event musicEvent;
     private uint playingID;
@@ -66,13 +67,10 @@ public class RhythmManager : MonoBehaviour
         if (in_type == AkCallbackType.AK_EndOfEvent)
             isPlaying = false;
 
-        AkMusicSyncCallbackInfo musicInfo;
-
         if (in_info is AkMusicSyncCallbackInfo)
         {
-            musicInfo = (AkMusicSyncCallbackInfo)in_info;
+            AkMusicSyncCallbackInfo musicInfo = (AkMusicSyncCallbackInfo)in_info;
             RhythmEventArgs args = new RhythmEventArgs(musicInfo);
-            //args.musicInfo = musicInfo;
 
             switch (in_type)
             {
@@ -97,6 +95,25 @@ public class RhythmManager : MonoBehaviour
                 }
             }
         }
+
+        if (in_info is AkMIDIEventCallbackInfo)
+        {
+            AkMIDIEventCallbackInfo midiInfo = (AkMIDIEventCallbackInfo)in_info;
+            RhythmEventArgs args = new RhythmEventArgs(midiInfo);
+
+            switch (midiInfo.byType)
+            {
+                case AkMIDIEventTypes.NOTE_ON:
+                    OnMIDI(args);
+                    break;
+
+                case AkMIDIEventTypes.NOTE_OFF:
+                    break;
+
+                case AkMIDIEventTypes.PITCH_BEND:
+                    break;
+            }
+        }
     }
 
     private void OnCue(RhythmEventArgs e)
@@ -113,14 +130,25 @@ public class RhythmManager : MonoBehaviour
     {
         onBar?.Invoke(this, e);
     }
+
+    private void OnMIDI(RhythmEventArgs e)
+    {
+        onMIDI?.Invoke(this, e);
+    }
 }
 
 public class RhythmEventArgs : EventArgs
 {
+    public AkMusicSyncCallbackInfo musicInfo { get; set; }
+    public AkMIDIEventCallbackInfo midiInfo { get; set; }
+
     public RhythmEventArgs(AkMusicSyncCallbackInfo info)
     {
         musicInfo = info;
     }
 
-    public AkMusicSyncCallbackInfo musicInfo { get; set; }
+    public RhythmEventArgs(AkMIDIEventCallbackInfo info)
+    {
+        midiInfo = info;
+    }
 }

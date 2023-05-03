@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ReactOnRhythm;
 
-public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
+public class SpotManager : MonoBehaviour, IOnMIDI, IOnBeat
 {
     [SerializeField] private Spot prefab;
 
@@ -16,17 +16,17 @@ public class SpotManager : MonoBehaviour, IOnCue, IOnBeat
 
     private void Start()
     {
-        RhythmManager.onCue += OnCue;
+        RhythmManager.onMIDI += OnMIDI;
         RhythmManager.onBeat += OnBeat;
     }
 
     private void OnDestroy()
     {
-        RhythmManager.onCue -= OnCue;
+        RhythmManager.onMIDI -= OnMIDI;
         RhythmManager.onBeat -= OnBeat;
     }
 
-    public void OnCue(object sender, System.EventArgs e)
+    public void OnMIDI(object sender, System.EventArgs e)
     {
         SpawnSpot();
     }

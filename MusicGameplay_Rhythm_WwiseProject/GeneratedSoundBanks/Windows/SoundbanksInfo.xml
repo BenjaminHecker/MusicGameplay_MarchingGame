@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{87C7EC9E-8DA4-C32E-47CA-258D55D21B6E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5B9325D9-58AD-BDEB-0A14-FB295B689072}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CD6BD17F-3E01-7AD2-1CD8-F125BA0FD357}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -37,6 +37,10 @@
 				<File Id="345135581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>musical-march-4312.wav</ShortName>
 					<CachePath>SFX/musical-march-4312_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="519706933" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MIDI Syncs.mid</ShortName>
+					<CachePath>SFX/MIDI Syncs_E2C44794.wem</CachePath>
 				</File>
 				<File Id="598688921" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Pepsi.wav</ShortName>
@@ -67,6 +71,11 @@
 					<CachePath>SFX/Metronome120_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="793195429" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+			</Plugins>
 			<Events>
 				<Event Id="2522127497" Name="HipHop" DurationType="OneShot" DurationMin="40.96941" DurationMax="40.96941">
 					<MediaRefs>
@@ -88,9 +97,15 @@
 				</Event>
 				<Event Id="374244200" Name="Pepsi" DurationType="OneShot" DurationMin="34" DurationMax="34">
 					<MediaRefs>
+						<MediaRef Id="519706933"/>
 						<MediaRef Id="598688921"/>
 						<MediaRef Id="855574524"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="2532903782" Name="Player1Hit" DurationType="OneShot" DurationMin="0.38165534" DurationMax="0.38165534">
 					<MediaRefs>
@@ -105,5 +120,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A3C1B447-AF0A-2040-722C-55D56404222E}</FileHash>
+	<FileHash>{851EFE4C-3433-F243-8C96-A86D438BB567}</FileHash>
 </SoundBanksInfo>
