@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float stepSize = 1f;
     [SerializeField] private float stepSmoothTime = 0.005f;
     [SerializeField] private float rotateSpeed = 10f;
-    //[SerializeField] private float inputDeadzone = 0.2f;
 
     [Tooltip("threshold angle for diagonal inputs (in degrees)")]
     [SerializeField] [Range(0f, 45f)] private float diagonalAngleThreshold = 15;
@@ -40,20 +39,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 currentPos;
     [HideInInspector] public Vector2 targetPos;
 
+    private bool tapProcessed = false;
+
     private void Awake()
     {
         instance = this;
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            dir = SnapDir(context.ReadValue<Vector2>());
-
-            if (RhythmManager.IsPlaying)
-                Step();
-        }
     }
 
     private void Update()
@@ -62,6 +52,28 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 currentVelocity = Vector3.zero;
         player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, stepSmoothTime);
+    }
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        Vector2 rawDir = context.ReadValue<Vector2>();
+
+        if (context.performed)
+        {
+            if (!tapProcessed && rawDir != Vector2.zero)
+            {
+                tapProcessed = true;
+
+                dir = SnapDir(rawDir);
+
+                if (RhythmManager.IsPlaying)
+                    Step();
+            }
+        }
+        if (context.canceled)
+        {
+            tapProcessed = false;
+        }
     }
 
     private void Step()
@@ -90,12 +102,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 SnapDir(Vector2 dir)
     {
-        //if (dir.magnitude <= inputDeadzone)
-        //{
-        //    dir = Vector2.zero;
-        //    return dir;
-        //}
-
         dir.Normalize();
 
         if (dir.x > DiagonalValueThreshold)
