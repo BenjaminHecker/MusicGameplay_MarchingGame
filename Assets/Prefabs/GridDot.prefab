@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28b179e0a60f6c4f96a98e3a77fa9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revealRange: 5
+  revealRange: 3.5
   revealCurve:
     serializedVersion: 2
     m_Curve:

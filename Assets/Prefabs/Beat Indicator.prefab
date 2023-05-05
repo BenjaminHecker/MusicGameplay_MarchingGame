@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162ee44c1d354cc449154fe799d0b157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 3372266600974691241}
-  curve:
+  marker: {fileID: 3372266600974691241}
+  fallCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -145,11 +145,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 3.1468556
+      outSlope: 3.1468556
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.027960539
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -158,3 +158,31 @@ MonoBehaviour:
   targetScale: 1
   startColor: {r: 1, g: 0.83137256, b: 0, a: 0}
   targetColor: {r: 1, g: 0.83137256, b: 0, a: 1}
+  disappearCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.0883272
+      outSlope: 3.0883272
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.029605264
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  disappearDurationFactor: 0.5
+  disappearScale: 1.5
+  startRotation: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 90}

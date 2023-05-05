@@ -7,14 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
 
-    public enum TimingWindow
-    {
-        Perfect = 20,
-        Great = 10,
-        Good = 5,
-        Miss = -10
-    }
-
     [Header("Movement")]
     [SerializeField] private Transform sprite;
     [SerializeField] private float stepSize = 1f;
@@ -34,15 +26,15 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Timing Window")]
     [SerializeField] [Range(0f, 1f)] private float stepCooldownFactor = 0.5f;
-    [SerializeField] private TimingIndicator indicatorPrefab;
-    [SerializeField] private float perfectWindow = 0.050f;
-    [SerializeField] private float greatWindow = 0.075f;
-    [SerializeField] private float goodWindow = 0.100f;
+    //[SerializeField] private TimingIndicator indicatorPrefab;
+    //[SerializeField] private float perfectWindow = 0.050f;
+    //[SerializeField] private float greatWindow = 0.075f;
+    //[SerializeField] private float goodWindow = 0.100f;
 
     private float lastStepTime = 0f;
 
-    private Vector2 dir;
-    private Vector2 prevPos;
+    [HideInInspector] public Vector2 dir;
+    [HideInInspector] public Vector2 prevPos;
     [HideInInspector] public Vector2 currPos;
 
     private bool tapProcessed = false;
@@ -93,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Step()
     {
-        TimingWindow timing = GetTimingWindow();
+        //TimingWindow timing = GetTimingWindow();
 
         if (Time.time - lastStepTime >= stepCooldownFactor * RhythmManager.BeatDuration)
         {
@@ -106,15 +98,15 @@ public class PlayerMovement : MonoBehaviour
 
             moveTimer = 0f;
         }
-        else
-        {
-            timing = TimingWindow.Miss;
-        }
+        //else
+        //{
+        //    timing = TimingWindow.Miss;
+        //}
 
-        TimingIndicator indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
-        indicator.Init(timing, -dir);
+        //TimingIndicator indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
+        //indicator.Init(timing, -dir);
 
-        GameManager.IncrementScore((int)timing);
+        //GameManager.IncrementScore((int)timing);
     }
 
     private Vector2 SnapDir(Vector2 dir)
@@ -140,14 +132,14 @@ public class PlayerMovement : MonoBehaviour
         return dir;
     }
 
-    private TimingWindow GetTimingWindow()
-    {
-        float nearestBeat = Mathf.Round(RhythmManager.CurrentPositionSec / RhythmManager.BeatDuration) * RhythmManager.BeatDuration;
-        float beatOffset = Mathf.Abs(RhythmManager.CurrentPositionSec - nearestBeat);
+    //private TimingWindow GetTimingWindow()
+    //{
+    //    float nearestBeat = Mathf.Round(RhythmManager.CurrentPositionSec / RhythmManager.BeatDuration) * RhythmManager.BeatDuration;
+    //    float beatOffset = Mathf.Abs(RhythmManager.CurrentPositionSec - nearestBeat);
 
-        if (beatOffset <= perfectWindow / 2f) return TimingWindow.Perfect;
-        if (beatOffset <= greatWindow / 2f) return TimingWindow.Great;
-        if (beatOffset <= goodWindow / 2f) return TimingWindow.Good;
-        return TimingWindow.Miss;
-    }
+    //    if (beatOffset <= perfectWindow / 2f) return TimingWindow.Perfect;
+    //    if (beatOffset <= greatWindow / 2f) return TimingWindow.Great;
+    //    if (beatOffset <= goodWindow / 2f) return TimingWindow.Good;
+    //    return TimingWindow.Miss;
+    //}
 }

@@ -229,7 +229,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementCurve:
+  moveCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -253,7 +253,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementSpeed: 1
+  moveDistance: 1
   duration: 1
   perfect:
     text: PERFECT!

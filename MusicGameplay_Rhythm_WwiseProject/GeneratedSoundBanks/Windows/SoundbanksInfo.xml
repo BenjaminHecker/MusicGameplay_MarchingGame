@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5D63C774-C22C-B9F4-160F-B01A0ACDAC12}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7CB30939-3647-1118-4B89-6B1BB9D97003}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -89,7 +89,7 @@
 						<MediaRef Id="1059043398"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="158.24301" DurationMax="158.24301">
+				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="158.25" DurationMax="158.25">
 					<MediaRefs>
 						<MediaRef Id="251213437"/>
 						<MediaRef Id="742164214"/>
@@ -120,5 +120,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9407F712-E23A-C194-64DE-BA5BD8E31CB6}</FileHash>
+	<FileHash>{7BE8C67B-5704-C1BF-08C9-8EFFB88102EF}</FileHash>
 </SoundBanksInfo>

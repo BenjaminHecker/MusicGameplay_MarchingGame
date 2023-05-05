@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static PlayerMovement;
+using static BeatManager;
 
 public class TimingIndicator : MonoBehaviour
 {
