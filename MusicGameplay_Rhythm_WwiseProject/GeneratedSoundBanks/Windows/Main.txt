@@ -1,24 +1,36 @@
 Event	ID	Name			Wwise Object Path	Notes
 	374244200	Pepsi			\Default Work Unit\Pepsi	
+	778053121	JazzyAbstract			\Default Work Unit\JazzyAbstract	
 	942295769	MarchingSong			\Default Work Unit\MarchingSong	
 	1459549293	MEGALOVANIA			\Default Work Unit\MEGALOVANIA	
 	1525101168	SimpleMarch			\Default Work Unit\SimpleMarch	
+	1874256399	FunkInTheTrunk			\Default Work Unit\FunkInTheTrunk	
 	2522127497	HipHop			\Default Work Unit\HipHop	
 	2532903782	Player1Hit			\Default Work Unit\Player1Hit	
+	4128252305	DeathByGlamour			\Default Work Unit\DeathByGlamour	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	793195429	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\MIDI Target\Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	237639916	Funk in the Trunk	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Funk in the Trunk_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Funk in the Trunk\Funk in the Trunk		5644896
 	251213437	Metronome240	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome240_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MEGALOVANIA\Metronome240		352896
+	252926244	Death by Glamour (Beats)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Death by Glamour (Beats)_E9693C77.wem		\Interactive Music Hierarchy\Default Work Unit\Death by Glamour\Death by Glamour (Beats)		697
 	287938353	hip-hop-just-in-my-style-141059	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\hip-hop-just-in-my-style-141059_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\HipHop\hip-hop-just-in-my-style-141059		7188576
 	345135581	musical-march-4312	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\musical-march-4312_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\SimpleMarch\musical-march-4312		9598560
+	366788806	Metronome148	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome148_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Death by Glamour\Metronome148		572204
+	414697325	Hip Hop (Beats)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Hip Hop (Beats)_12038FAF.wem		\Interactive Music Hierarchy\Default Work Unit\HipHop\Hip Hop (Beats)		390
+	513476104	Jazzy Abstract	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Jazzy Abstract_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Jazzy Abstract\Jazzy Abstract		14794936
 	519706933	MIDI Syncs	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\MIDI Syncs_E2C44794.wem		\Interactive Music Hierarchy\Default Work Unit\Pepsi\MIDI Syncs		514
+	533879647	Death by Glamour	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Death by Glamour_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Death by Glamour\Death by Glamour		4576960
 	598688921	Pepsi	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Pepsi_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Pepsi\Pepsi		5644896
 	692323099	MarchingSong	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\marching-music-on-the-tramp-by-john-philip-sousa-95350_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\MarchingSong		22127712
 	699473598	13750__hookhead__snare-2	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\13750__hookhead__snare-2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Player1Hit\13750__hookhead__snare-2		33758
 	742164214	[YT2mp3_info] - MEGALOVANIA (320kbps)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MEGALOVANIA\[YT2mp3_info] - MEGALOVANIA (320kbps)		27528288
+	750105677	Jazzy Abstract (Beats)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Jazzy Abstract (Beats)_9AFBBDD8.wem		\Interactive Music Hierarchy\Default Work Unit\Jazzy Abstract\Jazzy Abstract (Beats)		810
 	855574524	Metronome180	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome180_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Pepsi\Metronome180		470496
 	886094863	Metronome85	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome85_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\HipHop\Metronome85		996236
+	993896881	Funk in the Trunk (Beats)	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Funk in the Trunk (Beats)_82EE31FE.wem		\Interactive Music Hierarchy\Default Work Unit\Funk in the Trunk\Funk in the Trunk (Beats)		789
+	1057476266	Metronome93	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome93_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Jazzy Abstract\Metronome93		910548
 	1059043398	Metronome120	C:\Users\benhe\OneDrive\Desktop\Unity Projects\Music & Gameplay\MusicGameplay_Rhythm\MusicGameplay_Rhythm_WwiseProject\.cache\Windows\SFX\Metronome120_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\MarchingSong\Metronome120		705696
 

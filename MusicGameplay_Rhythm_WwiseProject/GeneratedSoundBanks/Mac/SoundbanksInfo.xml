@@ -22,13 +22,21 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7CB30939-3647-1118-4B89-6B1BB9D97003}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{774C74EB-7E79-34B4-A704-300D7149DAD5}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="237639916" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Funk in the Trunk.wav</ShortName>
+					<CachePath>SFX/Funk in the Trunk_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="251213437" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metronome240.wav</ShortName>
 					<CachePath>SFX/Metronome240_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="252926244" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death by Glamour (Beats).mid</ShortName>
+					<CachePath>SFX/Death by Glamour (Beats)_E9693C77.wem</CachePath>
 				</File>
 				<File Id="287938353" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>hip-hop-just-in-my-style-141059.wav</ShortName>
@@ -38,9 +46,25 @@
 					<ShortName>musical-march-4312.wav</ShortName>
 					<CachePath>SFX/musical-march-4312_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="366788806" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome148.wav</ShortName>
+					<CachePath>SFX/Metronome148_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="414697325" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hip Hop (Beats).mid</ShortName>
+					<CachePath>SFX/Hip Hop (Beats)_12038FAF.wem</CachePath>
+				</File>
+				<File Id="513476104" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Jazzy Abstract.wav</ShortName>
+					<CachePath>SFX/Jazzy Abstract_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="519706933" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MIDI Syncs.mid</ShortName>
 					<CachePath>SFX/MIDI Syncs_E2C44794.wem</CachePath>
+				</File>
+				<File Id="533879647" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death by Glamour.wav</ShortName>
+					<CachePath>SFX/Death by Glamour_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="598688921" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Pepsi.wav</ShortName>
@@ -58,6 +82,10 @@
 					<ShortName>[YT2mp3.info] - MEGALOVANIA (320kbps).wav</ShortName>
 					<CachePath>SFX/[YT2mp3.info] - MEGALOVANIA (320kbps)_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="750105677" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Jazzy Abstract (Beats).mid</ShortName>
+					<CachePath>SFX/Jazzy Abstract (Beats)_9AFBBDD8.wem</CachePath>
+				</File>
 				<File Id="855574524" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metronome180.wav</ShortName>
 					<CachePath>SFX/Metronome180_D79FB2B7.wem</CachePath>
@@ -65,6 +93,14 @@
 				<File Id="886094863" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metronome85.wav</ShortName>
 					<CachePath>SFX/Metronome85_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="993896881" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Funk in the Trunk (Beats).mid</ShortName>
+					<CachePath>SFX/Funk in the Trunk (Beats)_82EE31FE.wem</CachePath>
+				</File>
+				<File Id="1057476266" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metronome93.wav</ShortName>
+					<CachePath>SFX/Metronome93_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="1059043398" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metronome120.wav</ShortName>
@@ -77,23 +113,75 @@
 				</Custom>
 			</Plugins>
 			<Events>
+				<Event Id="4128252305" Name="DeathByGlamour" DurationType="OneShot" DurationMin="27.972973" DurationMax="27.972973">
+					<MediaRefs>
+						<MediaRef Id="252926244"/>
+						<MediaRef Id="366788806"/>
+						<MediaRef Id="533879647"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="1874256399" Name="FunkInTheTrunk" DurationType="OneShot" DurationMin="34.5" DurationMax="34.5">
+					<MediaRefs>
+						<MediaRef Id="237639916"/>
+						<MediaRef Id="993896881"/>
+						<MediaRef Id="1059043398"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="2522127497" Name="HipHop" DurationType="OneShot" DurationMin="40.96941" DurationMax="40.96941">
 					<MediaRefs>
 						<MediaRef Id="287938353"/>
+						<MediaRef Id="414697325"/>
 						<MediaRef Id="886094863"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="778053121" Name="JazzyAbstract" DurationType="OneShot" DurationMin="87.741936" DurationMax="87.741936">
+					<MediaRefs>
+						<MediaRef Id="513476104"/>
+						<MediaRef Id="750105677"/>
+						<MediaRef Id="1057476266"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="942295769" Name="MarchingSong" DurationType="OneShot" DurationMin="22.5" DurationMax="22.5">
 					<MediaRefs>
 						<MediaRef Id="692323099"/>
 						<MediaRef Id="1059043398"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1459549293" Name="MEGALOVANIA" DurationType="OneShot" DurationMin="158.25" DurationMax="158.25">
 					<MediaRefs>
 						<MediaRef Id="251213437"/>
 						<MediaRef Id="742164214"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="793195429"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="374244200" Name="Pepsi" DurationType="OneShot" DurationMin="34" DurationMax="34">
 					<MediaRefs>
@@ -120,5 +208,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B6CC3E65-09FF-3B52-865D-B9F87A96F78E}</FileHash>
+	<FileHash>{AC5DE1B7-B93C-B7AD-6776-26B1885AE1D0}</FileHash>
 </SoundBanksInfo>

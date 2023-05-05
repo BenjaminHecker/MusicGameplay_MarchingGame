@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 113574e1a6cf974e9166cc7c60a754ff
     GuidInternal: 
-    m_lastTime: -8585207157696265819
+    m_lastTime: -8585182977958655695
     List:
     - name: Main
       guid: 21a2fbd5f9b2d4448a48c036b6c8315e
@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6ebfb6e5243ae449ba278f439df6fb42
     GuidInternal: 
-    m_lastTime: -8585207157696355827
+    m_lastTime: -8585182977994342008
     List:
+    - name: DeathByGlamour
+      guid: c6786f9c25de3e4f8ee1825b6420b62a
+      id: 4128252305
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: DeathByGlamour
+        ObjectType: 3
+        guid: c6786f9c25de3e4f8ee1825b6420b62a
+      Path: Events\Default Work Unit\DeathByGlamour
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: FunkInTheTrunk
+      guid: fb41dd3a68b55244b92977420a197eb6
+      id: 1874256399
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: FunkInTheTrunk
+        ObjectType: 3
+        guid: fb41dd3a68b55244b92977420a197eb6
+      Path: Events\Default Work Unit\FunkInTheTrunk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: HipHop
       guid: 59999a9def2531458564531436f421bc
       id: 2522127497
@@ -110,6 +144,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 59999a9def2531458564531436f421bc
       Path: Events\Default Work Unit\HipHop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: JazzyAbstract
+      guid: 400082588d70994087d5cf9127d88f73
+      id: 778053121
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6ebfb6e5243ae449ba278f439df6fb42
+      - ElementName: JazzyAbstract
+        ObjectType: 3
+        guid: 400082588d70994087d5cf9127d88f73
+      Path: Events\Default Work Unit\JazzyAbstract
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -255,7 +306,7 @@ MonoBehaviour:
     m_lastTime: -8585231856496361827
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000500000006000000070000000a0000000b0000000c0000003a0000003b00000006010000070100001801000019010000
+  ExpandedWaapiItemIds: 010000000500000006000000070000000a0000000b0000000c0000003a0000003b0000006a0000006b00000006010000070100001801000019010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

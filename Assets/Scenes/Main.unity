@@ -1438,13 +1438,16 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: deb4b0838428dac49a8529f6b5056e81, type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2ea98ae2565dc294d9e98141844fbca2, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: f80aae6d40a41fd47ab9206e38adf5be, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 51af708c90132854a986029c71fa84d7, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fb4b28c27342e004684512abfdfe503c, type: 2}
   - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f655af9ecc47d164884387d6bb6382ba, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: aa21d3a17269bc34382f40788b0e45e9, type: 2}
   txt_Score: {fileID: 1757077257}
   playerAnim: {fileID: 1862160569}
 --- !u!4 &181440579

@@ -13,7 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID DEATHBYGLAMOUR = 4128252305U;
+        static const AkUniqueID FUNKINTHETRUNK = 1874256399U;
         static const AkUniqueID HIPHOP = 2522127497U;
+        static const AkUniqueID JAZZYABSTRACT = 778053121U;
         static const AkUniqueID MARCHINGSONG = 942295769U;
         static const AkUniqueID MEGALOVANIA = 1459549293U;
         static const AkUniqueID PEPSI = 374244200U;

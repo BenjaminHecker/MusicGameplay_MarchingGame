@@ -69,6 +69,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="DeathByGlamour" ID="{9C6F78C6-DE25-4F3E-8EE1-825B6420B62A}">
+					<ChildrenList>
+						<Action Name="" ID="{3C2BB045-3A4C-44EB-B4C7-44F26F9200D0}" ShortID="591954334">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death by Glamour" ID="{4BB7F9AB-C1DB-4137-BAF3-15D2C3517A97}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FunkInTheTrunk" ID="{3ADD41FB-B568-4452-B929-77420A197EB6}">
+					<ChildrenList>
+						<Action Name="" ID="{E7271A7A-F3D4-48A9-87E5-4F91CA6BA203}" ShortID="583313880">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Funk in the Trunk" ID="{696CD0A8-C957-4F51-BE43-8F5DB7BB5823}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="JazzyAbstract" ID="{58820040-708D-4099-87D5-CF9127D88F73}">
+					<ChildrenList>
+						<Action Name="" ID="{32FB0490-1BC1-4E40-993F-A56D360168BF}" ShortID="802852672">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Jazzy Abstract" ID="{258E8380-F083-470E-A574-890DB130F213}" WorkUnitID="{85E7EFA2-DC24-4E73-967F-7B4AD8B48378}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
