@@ -24,12 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float DiagonalValueThreshold { get { return Mathf.Sin(Mathf.Deg2Rad * diagonalAngleThreshold); } }
 
-    [Header("Timing Window")]
     [SerializeField] [Range(0f, 1f)] private float stepCooldownFactor = 0.5f;
-    //[SerializeField] private TimingIndicator indicatorPrefab;
-    //[SerializeField] private float perfectWindow = 0.050f;
-    //[SerializeField] private float greatWindow = 0.075f;
-    //[SerializeField] private float goodWindow = 0.100f;
 
     private float lastStepTime = 0f;
 
@@ -85,8 +80,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Step()
     {
-        //TimingWindow timing = GetTimingWindow();
-
         if (Time.time - lastStepTime >= stepCooldownFactor * RhythmManager.BeatDuration)
         {
             lastStepTime = Time.time;
@@ -98,15 +91,6 @@ public class PlayerMovement : MonoBehaviour
 
             moveTimer = 0f;
         }
-        //else
-        //{
-        //    timing = TimingWindow.Miss;
-        //}
-
-        //TimingIndicator indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
-        //indicator.Init(timing, -dir);
-
-        //GameManager.IncrementScore((int)timing);
     }
 
     private Vector2 SnapDir(Vector2 dir)
@@ -131,15 +115,4 @@ public class PlayerMovement : MonoBehaviour
 
         return dir;
     }
-
-    //private TimingWindow GetTimingWindow()
-    //{
-    //    float nearestBeat = Mathf.Round(RhythmManager.CurrentPositionSec / RhythmManager.BeatDuration) * RhythmManager.BeatDuration;
-    //    float beatOffset = Mathf.Abs(RhythmManager.CurrentPositionSec - nearestBeat);
-
-    //    if (beatOffset <= perfectWindow / 2f) return TimingWindow.Perfect;
-    //    if (beatOffset <= greatWindow / 2f) return TimingWindow.Great;
-    //    if (beatOffset <= goodWindow / 2f) return TimingWindow.Good;
-    //    return TimingWindow.Miss;
-    //}
 }

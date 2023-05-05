@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Menu")
             Application.Quit();
     }
 

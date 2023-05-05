@@ -1448,6 +1448,9 @@ MonoBehaviour:
   - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f655af9ecc47d164884387d6bb6382ba, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: aa21d3a17269bc34382f40788b0e45e9, type: 2}
   txt_Score: {fileID: 1757077257}
   playerAnim: {fileID: 1862160569}
 --- !u!4 &181440579
