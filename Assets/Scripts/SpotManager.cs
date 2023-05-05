@@ -26,12 +26,12 @@ public class SpotManager : MonoBehaviour, IOnMIDI, IOnBeat
         RhythmManager.onBeat -= OnBeat;
     }
 
-    public void OnMIDI(object sender, System.EventArgs e)
+    public void OnMIDI(RhythmManager.RhythmEventInfo e)
     {
         SpawnSpot();
     }
 
-    public void OnBeat(object sender, System.EventArgs e)
+    public void OnBeat(RhythmManager.RhythmEventInfo e)
     {
         if (!firstSpot)
             dist++;

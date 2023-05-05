@@ -52,12 +52,12 @@ public class Spot : MonoBehaviour, IOnBeat
         RhythmManager.onBeat -= OnBeat;
     }
 
-    public void OnBeat(object sender, EventArgs e)
+    public void OnBeat(RhythmManager.RhythmEventInfo e)
     {
         counter--;
         timerTarget = timer + counter * RhythmManager.BeatDuration;
 
-        if (counter == 0 && (PlayerMovement.instance.targetPos - (Vector2)transform.position).magnitude < 0.1f)
+        if (counter == 0 && (PlayerMovement.instance.currPos - (Vector2)transform.position).magnitude < 0.1f)
         {
             hitSound.Post(gameObject);
             GameManager.IncrementScore(successPoints);

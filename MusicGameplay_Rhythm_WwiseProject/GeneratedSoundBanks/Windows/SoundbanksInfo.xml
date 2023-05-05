@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CD6BD17F-3E01-7AD2-1CD8-F125BA0FD357}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5D63C774-C22C-B9F4-160F-B01A0ACDAC12}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -120,5 +120,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{851EFE4C-3433-F243-8C96-A86D438BB567}</FileHash>
+	<FileHash>{9407F712-E23A-C194-64DE-BA5BD8E31CB6}</FileHash>
 </SoundBanksInfo>

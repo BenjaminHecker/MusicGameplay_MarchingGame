@@ -18,7 +18,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private Transform player;
     [SerializeField] private float stepSize = 1f;
-    [SerializeField] private float stepSmoothTime = 0.005f;
+
+    [SerializeField] private AnimationCurve moveCurve;
+    [SerializeField] [Range(0f, 1f)] private float moveDurationFactor = 0.5f;
+    private float MoveDuration { get { return RhythmManager.BeatDuration * moveDurationFactor; } }
+
+    private float moveTimer = 0f;
+
     [SerializeField] private float rotateSpeed = 10f;
 
     [Tooltip("threshold angle for diagonal inputs (in degrees)")]
@@ -36,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
     private float lastStepTime = 0f;
 
     private Vector2 dir;
-    private Vector2 currentPos;
-    [HideInInspector] public Vector2 targetPos;
+    private Vector2 prevPos;
+    [HideInInspector] public Vector2 currPos;
 
     private bool tapProcessed = false;
 
@@ -48,10 +54,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
+        if (moveTimer < MoveDuration)
+        {
+            float ratio = moveTimer / MoveDuration;
+            player.position = Vector3.Lerp(prevPos, currPos, moveCurve.Evaluate(ratio));
 
-        Vector3 currentVelocity = Vector3.zero;
-        player.position = Vector3.SmoothDamp(player.position, targetPos, ref currentVelocity, stepSmoothTime);
+            moveTimer += Time.deltaTime;
+        }
+        else
+        {
+            player.position = currPos;
+        }
+
+        player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -84,10 +99,12 @@ public class PlayerMovement : MonoBehaviour
         {
             lastStepTime = Time.time;
 
-            currentPos = targetPos;
+            prevPos = currPos;
 
-            if (GridManager.InBounds(currentPos + dir))
-                targetPos = currentPos += dir;
+            if (GridManager.InBounds(prevPos + dir))
+                currPos = prevPos + dir;
+
+            moveTimer = 0f;
         }
         else
         {

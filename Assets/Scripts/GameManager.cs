@@ -10,13 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static int selectedSong;
 
-    [System.Serializable]
-    public struct RhythmSong
-    {
-        public int BPM;
-        public AK.Wwise.Event song;
-    }
-    [SerializeField] private RhythmSong[] songs;
+    [SerializeField] private AK.Wwise.Event[] songs;
 
     [SerializeField] private TextMeshProUGUI txt_Score;
     [SerializeField] private Animator playerAnim;
@@ -29,8 +23,8 @@ public class GameManager : MonoBehaviour
         
         score = 0;
 
-        RhythmManager.PlaySong(songs[selectedSong].song);
-        playerAnim.speed = songs[selectedSong].BPM / 60f;
+        RhythmManager.PlaySong(songs[selectedSong]);
+        playerAnim.speed = RhythmManager.BPM / 60f;
     }
 
     private void Update()
@@ -44,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public static void StopSong()
     {
-        RhythmManager.StopSong(instance.songs[selectedSong].song);
+        RhythmManager.StopSong(instance.songs[selectedSong]);
     }
 
     public static void IncrementScore(int value)

@@ -512,7 +512,7 @@
 							</Reference>
 							<Reference>
 								<Local>
-									<MusicCue Name="" ID="{97167567-7883-4FA7-A317-B4BBB8167325}">
+									<MusicCue Name="Start Line" ID="{97167567-7883-4FA7-A317-B4BBB8167325}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
 											<Property Name="TimeMs" Type="Real64" Value="500"/>
@@ -1195,7 +1195,7 @@
 							</Reference>
 							<Reference>
 								<Local>
-									<MusicCue Name="" ID="{9245FF88-3287-4111-BEA0-510AA63C0DC8}">
+									<MusicCue Name="Start Line" ID="{9245FF88-3287-4111-BEA0-510AA63C0DC8}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
 											<Property Name="TimeMs" Type="Real64" Value="1250"/>
@@ -2316,16 +2316,6 @@
 							</Reference>
 							<Reference>
 								<Local>
-									<MusicCue Name="" ID="{16001A42-3651-4964-B43B-A38B581FAB01}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="2"/>
-											<Property Name="TimeMs" Type="Real64" Value="705.882352941176"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
 									<MusicCue Name="" ID="{57864847-DFE4-40CA-838D-A52B255EADC2}">
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="2"/>
@@ -2714,6 +2704,16 @@
 									</MusicCue>
 								</Local>
 							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Start Line" ID="{FE9FE312-B12F-49C1-9A2B-084BD4B3493F}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="2"/>
+											<Property Name="TimeMs" Type="Real64" Value="705.882352941176"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
 						</ObjectList>
 					</ObjectLists>
 				</MusicSegment>
@@ -2941,7 +2941,7 @@
 															<Local>
 																<MusicClipMidi Name="MIDI Syncs" ID="{13F89507-AE07-4F0F-A6CD-6C5459A267BA}">
 																	<PropertyList>
-																		<Property Name="EndTrimOffset" Type="Real64" Value="31999.9999999999"/>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="31750.0000000001"/>
 																		<Property Name="PlayAt" Type="Real64" Value="333.333333333333"/>
 																	</PropertyList>
 																	<MidiSourceRef Name="MIDI Syncs" ID="{59DEE569-01D0-4201-8349-1A0731696149}"/>
@@ -2970,6 +2970,16 @@
 										<PropertyList>
 											<Property Name="CueType" Type="int16" Value="1"/>
 											<Property Name="TimeMs" Type="Real64" Value="34000"/>
+										</PropertyList>
+									</MusicCue>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MusicCue Name="Start Line" ID="{1E4EBAAB-0552-4A74-A3B2-207C1258DE38}">
+										<PropertyList>
+											<Property Name="CueType" Type="int16" Value="2"/>
+											<Property Name="TimeMs" Type="Real64" Value="333.333333333333"/>
 										</PropertyList>
 									</MusicCue>
 								</Local>
