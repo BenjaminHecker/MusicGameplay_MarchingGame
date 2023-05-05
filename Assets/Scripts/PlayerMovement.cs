@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     [Header("Movement")]
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform sprite;
     [SerializeField] private float stepSize = 1f;
 
     [SerializeField] private AnimationCurve moveCurve;
@@ -57,16 +57,16 @@ public class PlayerMovement : MonoBehaviour
         if (moveTimer < MoveDuration)
         {
             float ratio = moveTimer / MoveDuration;
-            player.position = Vector3.Lerp(prevPos, currPos, moveCurve.Evaluate(ratio));
+            transform.position = Vector3.Lerp(prevPos, currPos, moveCurve.Evaluate(ratio));
 
             moveTimer += Time.deltaTime;
         }
         else
         {
-            player.position = currPos;
+            transform.position = currPos;
         }
 
-        player.up = Vector3.Lerp(player.up, dir, rotateSpeed * Time.deltaTime);
+        sprite.up = Vector3.Lerp(sprite.up, dir, rotateSpeed * Time.deltaTime);
     }
 
     public void Move(InputAction.CallbackContext context)
