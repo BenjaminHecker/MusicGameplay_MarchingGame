@@ -19,12 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float rotateSpeed = 10f;
 
-    [Tooltip("threshold angle for diagonal inputs (in degrees)")]
-    [SerializeField] [Range(0f, 45f)] private float diagonalAngleThreshold = 15;
-
-    private float DiagonalValueThreshold { get { return Mathf.Sin(Mathf.Deg2Rad * diagonalAngleThreshold); } }
-
     [SerializeField] [Range(0f, 1f)] private float stepCooldownFactor = 0.5f;
+
+    private float DiagonalValueThreshold { get { return Mathf.Sin(Mathf.Deg2Rad * 45f); } }
 
     private float lastStepTime = 0f;
 
@@ -32,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Vector2 prevPos;
     [HideInInspector] public Vector2 currPos;
 
-    private bool tapProcessed = false;
+    private Vector2 prevDir = Vector2.zero;
 
     private void Awake()
     {
@@ -56,25 +53,60 @@ public class PlayerMovement : MonoBehaviour
         sprite.up = Vector3.Lerp(sprite.up, dir, rotateSpeed * Time.deltaTime);
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void InputUp(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            dir = Vector2.up;
+            Step();
+        }
+    }
+
+    public void InputDown(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            dir = Vector2.down;
+            Step();
+        }
+    }
+
+    public void InputLeft(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            dir = Vector2.left;
+            Step();
+        }
+    }
+
+    public void InputRight(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            dir = Vector2.right;
+            Step();
+        }
+    }
+
+    public void InputJoystick(InputAction.CallbackContext context)
     {
         Vector2 rawDir = context.ReadValue<Vector2>();
+        Vector2 snapDir = SnapDir(rawDir);
 
-        if (context.performed)
+        if (context.performed && rawDir != Vector2.zero)
         {
-            if (!tapProcessed && rawDir != Vector2.zero)
+            if (snapDir != prevDir)
             {
-                tapProcessed = true;
+                dir = snapDir;
+                prevDir = dir;
 
-                dir = SnapDir(rawDir);
-
-                if (RhythmManager.IsPlaying)
-                    Step();
+                Step();
             }
         }
-        if (context.canceled)
+        else
         {
-            tapProcessed = false;
+            prevDir = Vector2.zero;
         }
     }
 
